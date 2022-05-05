@@ -1,5 +1,5 @@
 // set the dimensions and margins of the graph
-const margin = {top: 10, right: 30, bottom: 30, left: 60},
+const margin = {top: 10, right: 30, bottom: 60, left: 60},
         width = 800 - margin.left - margin.right,
         height = 400 - margin.top - margin.bottom;
 
@@ -45,6 +45,20 @@ d3.csv("https://raw.githubusercontent.com/newton-c/inequality_and_homicide/main/
         .style("opacity", 0.2)
         .style("stroke", "red")
 
+    svg.append("text")
+    .attr("class", "x label")
+    .attr("text-anchor", "middle")
+    .attr("x", width / 2)
+    .attr("y", height + 40)
+    .text("Gini Coeffecient (0 means perfect income equality)");
+
+    svg.append("text")
+    .attr("class", "y label")
+    .attr("text-anchor", "end")
+    .attr("y", -40)
+    .attr("dy", ".75em")
+    .attr("transform", "rotate(-90)")
+    .text("Homicides per 100,000 People");
 //     svg.append("path")
 //      .datum(data)
 //      .attr("fill", "none")
